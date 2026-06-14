@@ -1,77 +1,94 @@
 const workflowSteps = [
   {
-    kicker: "PASO 01 · DOCUMENTACIÓN",
-    title: "Todo comienza con las fuentes.",
-    text: "Se incorporan al proyecto los documentos disponibles del expediente: póliza, recibos, datos catastrales, fotografías, vídeos, notas de visita y relaciones de daños.",
-    noteLabel: "Regla esencial",
-    note: "La IA debe leer toda la documentación antes de responder.",
+    kicker: "PASO 01 · PERITACIÓN",
+    title: "Marta inspecciona y describe el siniestro.",
+    text: "Durante la visita toma fotografías y recoge la información necesaria para explicar el riesgo, las circunstancias, la causa y todos los daños observados.",
+    noteLabel: "Aportación profesional",
+    note: "La observación y el criterio técnico nacen en la peritación, no en la IA.",
     visual: `
       <div class="document-stack">
-        <div class="doc doc-back"><span>RECIBO</span></div>
+        <div class="doc doc-back"><span>NOTAS</span></div>
         <div class="doc doc-middle"><span>FOTOS</span></div>
         <div class="doc doc-front">
-          <div class="doc-icon">PDF</div>
-          <strong>Condiciones de póliza</strong>
+          <div class="doc-icon">VISITA</div>
+          <strong>Descripción del siniestro</strong>
           <i></i><i></i><i></i><i class="short"></i>
         </div>
       </div>`
   },
   {
-    kicker: "PASO 02 · ORDEN",
-    title: "Una petición corta activa el proceso.",
-    text: "Marta indica la tarea con lenguaje natural: “Descripción del riesgo”, “Correo acuerdo amistoso” o “Lista de daños”. No necesita volver a copiar las instrucciones.",
-    noteLabel: "Ejemplo de orden",
-    note: "“Correo solicitud de documentación inicial para el expediente 00000.”",
+    kicker: "PASO 02 · EXPEDIENTE",
+    title: "Se reúne toda la documentación disponible.",
+    text: "A la información obtenida en la visita se añaden las pólizas, condiciones generales y particulares, referencia catastral, recibos, comprobantes de pago y demás documentos aportados por el asegurado.",
+    noteLabel: "Dos fuentes unidas",
+    note: "Peritación de Marta + documentación contractual y administrativa.",
     visual: `
-      <div class="visual-prompt">
-        <span>MARTA</span>
-        <p>Correo acuerdo amistoso.</p>
-        <i></i>
-        <small>ENVIADO AL ASISTENTE</small>
-      </div>`
-  },
-  {
-    kicker: "PASO 03 · ENRUTADO",
-    title: "El manual maestro decide la ruta.",
-    text: "El sistema distingue entre un apartado técnico y una comunicación. Después localiza el prompt o la plantilla específica y respeta la jerarquía de instrucciones.",
-    noteLabel: "Dos bibliotecas",
-    note: "PROMPTS para el informe · CORREOS para el asegurado.",
-    visual: `
-      <div class="route-diagram">
-        <div class="route-source">ORDEN</div>
-        <span class="route-stem"></span>
-        <div class="route-options">
-          <div><b>A</b><strong>INFORME</strong><small>Prompts técnicos</small></div>
-          <div><b>B</b><strong>CORREO</strong><small>Plantillas</small></div>
+      <div class="document-stack">
+        <div class="doc doc-back"><span>RECIBOS</span></div>
+        <div class="doc doc-middle"><span>CATASTRO</span></div>
+        <div class="doc doc-front">
+          <div class="doc-icon">PDF</div>
+          <strong>Póliza y condiciones</strong>
+          <i></i><i></i><i></i><i class="short"></i>
         </div>
       </div>`
   },
   {
-    kicker: "PASO 04 · RESULTADO",
-    title: "La salida llega en el formato útil.",
-    text: "La IA extrae, organiza o redacta según la tarea: texto pericial conciso, tablas tabuladas para Excel o correos adaptados a la situación concreta.",
-    noteLabel: "El formato importa",
-    note: "Orden, campos, tono y límites de extensión ya están definidos.",
+    kicker: "PASO 03 · CHATGPT",
+    title: "El expediente completo se entrega al proyecto.",
+    text: "ChatGPT recibe la descripción de la peritación, las fotografías y todos los documentos. Dentro del proyecto ya están guardados el manual de trabajo del Consorcio, el archivo de prompts y el archivo de correos.",
+    noteLabel: "Conocimiento preparado",
+    note: "No hay que volver a explicar las reglas generales en cada petición.",
     visual: `
-      <div class="result-preview">
-        <span>RESULTADO</span>
-        <div><i></i><i></i><i></i></div>
-        <div><i></i><i></i><i></i></div>
-        <div><i></i><i></i><i></i></div>
-        <strong>LISTO PARA REVISIÓN <b>✓</b></strong>
+      <div class="route-diagram">
+        <div class="route-source">EXPEDIENTE</div>
+        <span class="route-stem"></span>
+        <div class="route-options">
+          <div><b>A</b><strong>DOCUMENTOS</strong><small>Datos del caso</small></div>
+          <div><b>B</b><strong>INSTRUCCIONES</strong><small>Método CCS</small></div>
+        </div>
       </div>`
   },
   {
-    kicker: "PASO 05 · VALIDACIÓN",
-    title: "La profesional conserva el control.",
-    text: "Marta contrasta el borrador con el expediente, corrige o completa cuando procede y decide qué se incorpora al informe o qué comunicación se envía.",
-    noteLabel: "Responsabilidad",
-    note: "La IA asiste. La revisión, el criterio y la decisión final son humanos.",
+    kicker: "PASO 04 · REDACCIÓN POR APARTADOS",
+    title: "Marta pide cada texto, uno a uno.",
+    text: "Solicita los datos de póliza, la descripción del riesgo, la causa del siniestro, la descripción de daños, la lista de bienes o la preexistencia. ChatGPT aplica automáticamente el prompt correspondiente.",
+    noteLabel: "Ejemplos de órdenes",
+    note: "“Descripción del riesgo” · “Causa del siniestro” · “Lista de daños”.",
+    visual: `
+      <div class="visual-prompt">
+        <span>MARTA</span>
+        <p>Descripción de daños. Muy breve.</p>
+        <i></i>
+        <small>PROMPT IDENTIFICADO AUTOMÁTICAMENTE</small>
+      </div>`
+  },
+  {
+    kicker: "PASO 05 · CONSTRUCCIÓN",
+    title: "Cada respuesta completa una parte del informe.",
+    text: "ChatGPT entrega el texto técnico o la tabla en el formato definido. Marta lo contrasta con el expediente y, cuando está correcto, lo incorpora en el apartado correspondiente del informe del Consorcio.",
+    noteLabel: "Proceso progresivo",
+    note: "El informe se construye poco a poco, no mediante una única respuesta automática.",
+    visual: `
+      <div class="result-preview">
+        <span>INFORME EN CONSTRUCCIÓN</span>
+        <div><i></i><i></i><i></i></div>
+        <div><i></i><i></i><i></i></div>
+        <div><i></i><i></i><i></i></div>
+        <strong>APARTADO INCORPORADO <b>✓</b></strong>
+      </div>`
+  },
+  {
+    kicker: "PASO 06 · INFORME FINAL",
+    title: "Marta termina y entrega el informe.",
+    text: "Una vez completados todos los apartados, revisa la coherencia del conjunto, realiza los ajustes necesarios y finaliza el informe que se remite al Consorcio de Compensación de Seguros.",
+    noteLabel: "Responsabilidad final",
+    note: "ChatGPT asiste en la redacción. Marta valida y firma el resultado profesional.",
     visual: `
       <div class="review-stamp">
         <div>✓</div>
-        <strong>REVISADO</strong>
-        <span>CRITERIO PROFESIONAL</span>
+        <strong>INFORME FINAL</strong>
+        <span>REVISADO POR LA PERITO</span>
       </div>`
   }
 ];

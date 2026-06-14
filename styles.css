@@ -242,6 +242,46 @@ h1 em, h2 em { color: var(--green); font-family: Georgia, serif; font-weight: 40
 }
 .statement-content > p:last-child { max-width: 780px; color: var(--ink-soft); font-size: 18px; line-height: 1.75; }
 
+.process-map { background: var(--paper-deep); }
+.map-heading { max-width: 920px; margin-bottom: 58px; }
+.map-heading h2, .communication-heading h2 {
+  margin-bottom: 24px;
+  font-size: clamp(38px, 4.3vw, 68px);
+  line-height: 1.06;
+  letter-spacing: -.055em;
+}
+.map-heading > p:last-child { max-width: 780px; color: var(--ink-soft); font-size: 17px; line-height: 1.7; }
+.map-grid { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.map-grid::before {
+  content: "";
+  position: absolute;
+  top: 54px;
+  left: 16%;
+  right: 16%;
+  height: 1px;
+  background: rgba(17,63,53,.25);
+}
+.map-card { position: relative; z-index: 1; min-height: 510px; padding: 30px; background: var(--white); border-radius: 22px; box-shadow: 0 14px 35px rgba(35,45,39,.06); }
+.map-card-two { color: white; background: var(--green); transform: translateY(-16px); box-shadow: 0 24px 50px rgba(17,63,53,.2); }
+.map-card-top { display: flex; align-items: center; justify-content: space-between; }
+.map-card-top span { width: 48px; height: 48px; display: grid; place-items: center; color: var(--green); background: var(--mint); border-radius: 50%; font: 700 11px/1 "Manrope", sans-serif; }
+.map-card-top small { color: #89938f; font-size: 8px; font-weight: 700; letter-spacing: .13em; }
+.map-card-two .map-card-top small { color: rgba(255,255,255,.45); }
+.map-icon { margin: 58px 0 24px; color: var(--blue); font-size: 31px; }
+.map-card-two .map-icon { color: var(--mint); }
+.map-card h3 { margin-bottom: 14px; font-size: 24px; line-height: 1.15; letter-spacing: -.035em; }
+.map-card > p { color: #66716c; font-size: 13px; line-height: 1.65; }
+.map-card-two > p { color: rgba(255,255,255,.62); }
+.map-card ul { margin: 26px 0 0; padding: 20px 0 0; list-style: none; border-top: 1px solid var(--line); }
+.map-card-two ul { border-color: rgba(255,255,255,.15); }
+.map-card li { position: relative; padding: 7px 0 7px 18px; color: #4f5d57; font-size: 11px; }
+.map-card-two li { color: rgba(255,255,255,.72); }
+.map-card li::before { content: ""; position: absolute; left: 0; top: 13px; width: 6px; height: 6px; background: var(--mint); border-radius: 50%; }
+.map-result { margin: 35px auto 0; max-width: 760px; padding: 22px 28px; display: grid; grid-template-columns: auto 1fr; column-gap: 24px; align-items: center; color: white; background: var(--green-deep); border-radius: 14px; }
+.map-result span { grid-row: 1 / 3; padding: 8px 10px; color: var(--green); background: var(--mint); border-radius: 5px; font-size: 8px; font-weight: 700; letter-spacing: .1em; }
+.map-result strong { font: 700 18px/1.3 "Manrope", sans-serif; }
+.map-result p { margin: 3px 0 0; color: rgba(255,255,255,.55); font-size: 10px; }
+
 .workflow { color: white; background: var(--green); }
 .section-heading { margin-bottom: 62px; display: grid; grid-template-columns: 1.3fr .7fr; align-items: end; gap: 10vw; }
 .section-heading h2 { margin-bottom: 0; }
@@ -250,7 +290,7 @@ h1 em, h2 em { color: var(--green); font-family: Georgia, serif; font-weight: 40
 .workflow-shell { overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: var(--radius); background: rgba(255,255,255,.035); }
 .workflow-tabs {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   border-bottom: 1px solid rgba(255,255,255,.14);
   scrollbar-width: none;
 }
@@ -306,6 +346,29 @@ h1 em, h2 em { color: var(--green); font-family: Georgia, serif; font-weight: 40
 .doc-front strong { margin-bottom: 25px; font-size: 14px; }
 .doc-front i { height: 5px; margin-bottom: 10px; background: #dfe3df; border-radius: 3px; }
 .doc-front i.short { width: 60%; }
+
+.communication { background: var(--white); }
+.communication-heading { margin-bottom: 70px; display: grid; grid-template-columns: 1.2fr .8fr; align-items: end; gap: 9vw; }
+.communication-heading h2 { margin-bottom: 0; }
+.communication-heading > p { margin-bottom: 6px; color: var(--ink-soft); line-height: 1.7; }
+.communication-track { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.communication-track::before { content: ""; position: absolute; top: 29px; left: 30px; right: 30px; height: 2px; background: #d9ded9; }
+.mail-stage { position: relative; z-index: 1; }
+.mail-marker { width: 60px; height: 60px; margin-bottom: 28px; display: grid; place-items: center; background: var(--white); border: 2px solid var(--green); border-radius: 50%; }
+.mail-marker span { width: 43px; height: 43px; display: grid; place-items: center; color: var(--green); background: var(--mint-soft); border-radius: 50%; font-size: 10px; font-weight: 700; }
+.mail-card { min-height: 360px; padding: 30px; background: #f2eee5; border-radius: 18px; }
+.mail-time { margin-bottom: 38px; color: var(--blue); font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+.mail-card h3 { margin-bottom: 14px; font-size: 23px; letter-spacing: -.035em; }
+.mail-card > p:not(.mail-time) { color: #606c67; font-size: 12px; line-height: 1.7; }
+.mail-items { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 7px; }
+.mail-items span { padding: 6px 9px; color: #59655f; background: var(--white); border-radius: 5px; font-size: 8px; font-weight: 700; }
+.mail-status { margin-top: 32px; padding: 13px 15px; display: flex; justify-content: space-between; color: #68736e; background: var(--white); border-radius: 7px; font-size: 8px; font-weight: 700; letter-spacing: .1em; }
+.mail-status b { color: var(--blue); font-size: 14px; }
+.mail-status.complete { color: var(--green); background: var(--mint-soft); }
+.mail-status.complete b { color: var(--green); }
+.parallel-note { margin-top: 35px; padding: 22px 25px; display: flex; align-items: center; gap: 24px; border: 1px solid var(--line); border-radius: 12px; }
+.parallel-note span { padding: 7px 9px; color: white; background: var(--blue); border-radius: 4px; font-size: 8px; font-weight: 700; letter-spacing: .1em; }
+.parallel-note p { margin: 0; color: var(--ink-soft); font-size: 12px; line-height: 1.5; }
 
 .capabilities { background: #f3efe5; }
 .capability-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 28px; }
@@ -396,6 +459,15 @@ footer > a:last-child { color: white; font-weight: 700; }
   .hero { grid-template-columns: 1fr; padding-top: 155px; }
   .hero-copy { position: relative; z-index: 3; }
   .hero-visual { margin-top: -20px; }
+  .map-grid { grid-template-columns: 1fr; }
+  .map-grid::before { display: none; }
+  .map-card { min-height: auto; }
+  .map-card-two { transform: none; }
+  .communication-track { grid-template-columns: 1fr; }
+  .communication-track::before { top: 30px; bottom: 30px; left: 29px; right: auto; width: 2px; height: auto; }
+  .mail-stage { padding-left: 86px; }
+  .mail-marker { position: absolute; left: 0; top: 0; }
+  .mail-card { min-height: auto; }
   .capability-layout { grid-template-columns: 1fr; }
   .route-summary { min-height: 460px; }
   .example { grid-template-columns: 1fr; }
@@ -453,12 +525,20 @@ footer > a:last-child { color: white; font-weight: 700; }
   .statement, .principles-title { grid-template-columns: 1fr; }
   .statement-number, .big-index { margin-bottom: 55px; }
   .section-heading { grid-template-columns: 1fr; gap: 25px; }
-  .workflow-tabs { grid-template-columns: repeat(5, minmax(80px, 1fr)); overflow-x: auto; }
+  .map-result { grid-template-columns: 1fr; gap: 10px; }
+  .map-result span { grid-row: auto; width: fit-content; }
+  .communication-heading { grid-template-columns: 1fr; gap: 25px; }
+  .workflow-tabs { grid-template-columns: repeat(6, minmax(80px, 1fr)); overflow-x: auto; }
   .workflow-tab { min-width: 82px; }
   .workflow-tab span { display: block; margin: 0 0 5px; }
   .workflow-panel { grid-template-columns: 1fr; }
   .panel-copy { padding: 45px 28px; }
   .panel-visual { min-height: 380px; }
+  .mail-stage { padding-left: 68px; }
+  .mail-marker { width: 48px; height: 48px; }
+  .mail-marker span { width: 34px; height: 34px; }
+  .mail-card { padding: 25px 22px; }
+  .parallel-note { align-items: flex-start; flex-direction: column; }
   .capability-grid { grid-template-columns: 1fr; }
   .route-summary { min-height: 500px; padding: 38px 30px; }
   .route-switch { width: 100%; }
