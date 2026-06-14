@@ -2,9 +2,9 @@ const workflowSteps = [
   {
     kicker: "PASO 01 · PERITACIÓN",
     title: "Marta inspecciona y describe el siniestro.",
-    text: "Durante la visita toma fotografías y recoge la información necesaria para explicar el riesgo, las circunstancias, la causa y todos los daños observados.",
+    text: "Durante la visita toma fotografías y recoge la información necesaria para explicar el riesgo, las circunstancias, la causa y todos los daños observados. Las notas de voz pueden transcribirse y ordenarse con ayuda de IA.",
     noteLabel: "Aportación profesional",
-    note: "La observación y el criterio técnico nacen en la peritación, no en la IA.",
+    note: "La IA ayuda a ordenar notas y tareas. La observación y el criterio técnico siguen siendo de la perito.",
     visual: `
       <div class="document-stack">
         <div class="doc doc-back"><span>NOTAS</span></div>
@@ -66,9 +66,9 @@ const workflowSteps = [
   {
     kicker: "PASO 05 · CONSTRUCCIÓN",
     title: "Cada respuesta completa una parte del informe.",
-    text: "ChatGPT entrega el texto técnico o la tabla en el formato definido. Marta lo contrasta con el expediente y, cuando está correcto, lo incorpora en el apartado correspondiente del informe del Consorcio.",
+    text: "ChatGPT entrega el texto técnico o la tabla en el formato definido. En Excel, la integración permite realizar ajustes sobre la valoración con mayor agilidad antes de incorporarla al informe.",
     noteLabel: "Proceso progresivo",
-    note: "El informe se construye poco a poco, no mediante una única respuesta automática.",
+    note: "Los textos y las valoraciones se construyen poco a poco, no mediante una única respuesta automática.",
     visual: `
       <div class="result-preview">
         <span>INFORME EN CONSTRUCCIÓN</span>
@@ -81,7 +81,7 @@ const workflowSteps = [
   {
     kicker: "PASO 06 · INFORME FINAL",
     title: "Marta termina y entrega el informe.",
-    text: "Una vez completados todos los apartados, revisa la coherencia del conjunto, realiza los ajustes necesarios y finaliza el informe que se remite al Consorcio de Compensación de Seguros.",
+    text: "Una vez completados los apartados y la valoración, Claude ayuda a preparar los anexos fotográficos. Marta revisa la coherencia del conjunto y finaliza el informe que se remite al Consorcio.",
     noteLabel: "Responsabilidad final",
     note: "ChatGPT asiste en la redacción. Marta valida y firma el resultado profesional.",
     visual: `
