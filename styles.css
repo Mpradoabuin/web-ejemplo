@@ -75,7 +75,7 @@ svg { width: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; }
 .brand-copy { display: flex; flex-direction: column; gap: 1px; }
 .brand-copy strong { font: 700 15px/1.2 "Manrope", sans-serif; }
 .brand-copy small { color: #67736e; font-size: 10px; letter-spacing: .07em; text-transform: uppercase; }
-.site-nav { display: flex; gap: 34px; font-size: 13px; font-weight: 600; }
+.site-nav { display: flex; gap: 25px; font-size: 12px; font-weight: 600; }
 .site-nav a { position: relative; padding: 8px 0; }
 .site-nav a::after {
   content: "";
@@ -379,6 +379,39 @@ h1 em, h2 em { color: var(--green); font-family: Georgia, serif; font-weight: 40
 .ecosystem-flow i { color: var(--mint); font-style: normal; }
 .ecosystem-flow strong { color: var(--green); padding: 8px 10px; background: var(--mint); border-radius: 4px; }
 
+.tool-details { background: var(--white); }
+.details-heading { max-width: 980px; margin-bottom: 70px; }
+.details-heading h2 {
+  margin-bottom: 25px;
+  font-size: clamp(38px, 4.3vw, 68px);
+  line-height: 1.06;
+  letter-spacing: -.055em;
+}
+.details-heading > p:last-child { max-width: 780px; color: var(--ink-soft); font-size: 17px; line-height: 1.7; }
+.detail-row {
+  padding: 48px 0;
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 260px;
+  gap: 42px;
+  border-top: 1px solid var(--line);
+}
+.detail-row:last-child { border-bottom: 1px solid var(--line); }
+.detail-index span { display: block; color: #c9cec9; font: 600 58px/1 "Manrope", sans-serif; letter-spacing: -.06em; }
+.detail-index small { display: block; margin-top: 12px; color: var(--green); font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+.detail-tool { margin-bottom: 12px; color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: .14em; }
+.detail-main h3 { max-width: 720px; margin-bottom: 16px; font-size: clamp(25px, 2.6vw, 39px); line-height: 1.12; letter-spacing: -.04em; }
+.detail-main > p:not(.detail-tool) { max-width: 850px; color: var(--ink-soft); font-size: 14px; line-height: 1.75; }
+.detail-columns { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.detail-columns > div { padding: 22px; background: #f3efe6; border-radius: 12px; }
+.detail-columns strong { color: var(--green); font: 700 12px/1.3 "Manrope", sans-serif; }
+.detail-columns ul { margin: 15px 0 0; padding: 0; list-style: none; }
+.detail-columns li { position: relative; padding: 5px 0 5px 16px; color: #5e6964; font-size: 10px; line-height: 1.45; }
+.detail-columns li::before { content: ""; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; background: var(--mint); border-radius: 50%; }
+.detail-result { align-self: start; padding: 24px; color: white; background: var(--green); border-radius: 15px; }
+.detail-result span { color: var(--mint); font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+.detail-result strong { display: block; margin: 35px 0 10px; font: 700 18px/1.25 "Manrope", sans-serif; }
+.detail-result p { margin: 0; color: rgba(255,255,255,.6); font-size: 10px; line-height: 1.6; }
+
 .workflow { color: white; background: var(--green); }
 .section-heading { margin-bottom: 62px; display: grid; grid-template-columns: 1.3fr .7fr; align-items: end; gap: 10vw; }
 .section-heading h2 { margin-bottom: 0; }
@@ -563,6 +596,8 @@ footer > a:last-child { color: white; font-weight: 700; }
   .ecosystem-hub { min-height: auto; grid-template-columns: 1fr 1fr; gap: 22px; }
   .ecosystem-hub::before, .ecosystem-hub::after, .hub-center { display: none; }
   .tool-field, .tool-claude { justify-self: stretch; }
+  .detail-row { grid-template-columns: 90px 1fr; }
+  .detail-result { grid-column: 2; }
   .communication-track { grid-template-columns: 1fr; }
   .communication-track::before { top: 30px; bottom: 30px; left: 29px; right: auto; width: 2px; height: auto; }
   .mail-stage { padding-left: 86px; }
@@ -633,6 +668,12 @@ footer > a:last-child { color: white; font-weight: 700; }
   .tool-symbol { margin-top: 35px; }
   .ecosystem-flow { align-items: flex-start; flex-direction: column; }
   .ecosystem-flow i { transform: rotate(90deg); margin-left: 12px; }
+  .detail-row { grid-template-columns: 1fr; gap: 22px; }
+  .detail-result { grid-column: auto; }
+  .detail-index { display: flex; align-items: center; gap: 15px; }
+  .detail-index span { font-size: 43px; }
+  .detail-index small { margin-top: 0; }
+  .detail-columns { grid-template-columns: 1fr; }
   .communication-heading { grid-template-columns: 1fr; gap: 25px; }
   .workflow-tabs { grid-template-columns: repeat(6, minmax(80px, 1fr)); overflow-x: auto; }
   .workflow-tab { min-width: 82px; }
